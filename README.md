@@ -96,7 +96,9 @@ For any questions or clarifications, please reach out to your team lead or check
 
 <br>
 <br>
+
 ## VERSION ESPAÑOL
+
 <br>
 <br>
 
