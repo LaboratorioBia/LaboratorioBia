@@ -94,11 +94,11 @@ For any questions or clarifications, please reach out to your team lead or check
 
 ---
 
-
+---
+---
 ## VERSION ESPAÑOL
 
-¡Claro! Aquí tienes una versión en español del README para tu repositorio en GitHub:
-
+---
 ---
 
 # Guía de Desarrollo para Laboratorio BIA
