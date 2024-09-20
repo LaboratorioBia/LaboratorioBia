@@ -1,8 +1,4 @@
-¡Perfecto! Aquí te dejo una estructura para el README de tu repositorio en GitHub, que documenta claramente las conclusiones y directrices para que cualquier desarrollador que llegue a la empresa sepa cómo organizar los desarrollos.
-
----
-
-# Company Development Guidelines
+# Laboratorio BIA Prebel
 
 ## Overview
 
