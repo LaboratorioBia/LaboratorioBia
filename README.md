@@ -73,7 +73,7 @@ Utilizamos pipelines de CI/CD para automatizar el proceso de pruebas, construcci
 
 ¡Bienvenido al equipo! Aquí tienes una guía rápida para empezar:
 
-1. **Configura Tu Entorno**: Sigue las instrucciones de configuración en el archivo `onboarding.md`.
+1. **Configura Tu Entorno**: Sigue las instrucciones de configuración en el archivo [onboarding.md](onboarding.md).
 2. **Comprende las Convenciones de Nombres**: Todos los repositorios y componentes siguen estándares de nombramiento específicos (consulta la sección de convenciones de nombres).
 3. **Verifica los Componentes Reutilizables**: Antes de escribir código nuevo, verifica si ya existe algún módulo o clase que puedas reutilizar desde el repositorio `CoreConnector`.
 4. **Control de Versiones**: Asegúrate de usar ramas en GitHub y seguir los estándares de versionado para cada proyecto.
