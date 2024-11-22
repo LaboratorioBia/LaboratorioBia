@@ -39,27 +39,20 @@ Cada servicio o módulo debe residir en su propio repositorio para mantener la m
 
 ## Componentes Reutilizables
 
-### Core Data Central (`CoreDataCentral`)
+### CoreConnector (`CoreConnector`)
 
-`CoreDataCentral` es una clase reutilizable que se conecta a los CDS de SAP para recuperar información. Está diseñada para ser compartida en múltiples proyectos. Esta clase se almacena en el repositorio **SharedModules** y puede integrarse en cualquier servicio que necesite acceso a datos de SAP.
+`CoreConnector` es una clase reutilizable que se conecta a las CDS de SAP para consultar información. Está diseñada para ser compartida en múltiples proyectos. Esta clase se almacena en el repositorio **CoreConnector** y puede integrarse en cualquier servicio que necesite acceso a datos de SAP.
 
 ### Cómo Usar en Proyectos
 
 1. **Importar la Clase:**
-   - Para Python: Añade la dependencia en tu archivo `requirements.txt` o instálalo usando pip:
-     ```bash
-     pip install coredatacentral
-     ```
-   - Para Node.js: Instala el paquete usando npm:
-     ```bash
-     npm install coredatacentral
-     ```
+   from CoreConnector import CDSConnector
 
-2. **Documentación**: Consulta el repositorio `SharedModules/CoreDataCentral` para obtener la documentación detallada sobre cómo integrar y usar esta clase.
+2. **Documentación**: Consulta el repositorio `CoreConnector/documentation` para obtener la documentación detallada sobre cómo integrar y usar esta clase.
 
 ### Control de Versiones
 
-Todos los componentes reutilizables, incluida la clase `CoreDataCentral`, seguirán el control de versiones semántico (`MAYOR.MENOR.PARCHE`). Asegúrate de que tu proyecto especifique la versión requerida para evitar problemas de compatibilidad.
+Todos los componentes reutilizables, incluida la clase `CoreConnector`, seguirán el control de versiones semántico (`MAYOR.MENOR.PARCHE`). Asegúrate de que tu proyecto especifique la versión requerida para evitar problemas de compatibilidad.
 
 ---
 
@@ -68,7 +61,7 @@ Todos los componentes reutilizables, incluida la clase `CoreDataCentral`, seguir
 ### Directrices de Repositorios
 
 - **Microservicios**: Un repositorio por servicio para asegurar despliegue y escalabilidad independientes.
-- **Servicios más pequeños**: Pueden agruparse en un repositorio compartido bajo `ServiciosGenerales/` o similar.
+- **Servicios más pequeños**: Pueden agruparse en un repositorio compartido bajo `GeneralServices/` o similar.
 
 ### Integración Continua
 
@@ -82,7 +75,7 @@ Utilizamos pipelines de CI/CD para automatizar el proceso de pruebas, construcci
 
 1. **Configura Tu Entorno**: Sigue las instrucciones de configuración en el archivo `onboarding.md`.
 2. **Comprende las Convenciones de Nombres**: Todos los repositorios y componentes siguen estándares de nombramiento específicos (consulta la sección de convenciones de nombres).
-3. **Verifica los Componentes Reutilizables**: Antes de escribir código nuevo, verifica si ya existe algún módulo o clase que puedas reutilizar desde el repositorio `SharedModules`.
+3. **Verifica los Componentes Reutilizables**: Antes de escribir código nuevo, verifica si ya existe algún módulo o clase que puedas reutilizar desde el repositorio `CoreConnector`.
 4. **Control de Versiones**: Asegúrate de usar ramas en GitHub y seguir los estándares de versionado para cada proyecto.
 
 Para cualquier duda o aclaración, por favor contacta a tu líder de equipo o revisa la carpeta `docs` para obtener documentación más detallada.
@@ -91,7 +84,7 @@ Para cualquier duda o aclaración, por favor contacta a tu líder de equipo o re
 
 ### Mejoras Futuras
 
-- **Modularización de Servicios**: Estamos mejorando constantemente nuestra arquitectura de microservicios y es posible que introduzcamos nuevos módulos para mejorar la escalabilidad y el rendimiento.
+- **Modularización de Servicios**: Estamos mejorando constantemente nuestra arquitectura y es posible que introduzcamos nuevos módulos para mejorar la escalabilidad y el rendimiento.
 - **Documentación Centralizada**: Estamos construyendo un sitio de documentación completo para desarrolladores, que será enlazado aquí una vez esté disponible.
 
 
