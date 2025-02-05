@@ -80,10 +80,10 @@ Las herramientas de escritorio (pequeñas aplicaciones con interfaz gráfica en 
 Cada tipo de proyecto sigue una documentación específica con buenas prácticas y guías detalladas. Consulta cada una según sea necesario:
 
 - **Microservicios:** [Guía de Desarrollo de Microservicios](./EstandarMicroservicios.md)
-- **Aplicaciones Web:** (Pendiente de documentar)
-- **Frontends:** (Pendiente de documentar)
-- **Automatizaciones RPA:** (Pendiente de documentar)
-- **Aplicaciones de Escritorio:** (Pendiente de documentar)
+- **Aplicaciones Web:** [Guía de Desarrollo de APPs](./EstandarApps.md)
+- **Frontends:** [Guía de Desarrollo de FRONT](./EstandarFronts.md)
+- **Automatizaciones RPA:** [Guía de Desarrollo de RPAs](./EstandarRpas.md)
+- **Aplicaciones de Escritorio:** [Guía de Desarrollo de TOOl](./EstandarEscritorio.md)
 
 Cada documento contiene detalles sobre:
 
@@ -98,7 +98,7 @@ Cada documento contiene detalles sobre:
 
 Para garantizar eficiencia y legibilidad en el código, se siguen estándares establecidos en un documento separado. Consulta las buenas prácticas y convenciones aquí:
 
-[Buenas Practicas y Convenciones](./EstandarMicroservicios.md)
+[Buenas Practicas y Convenciones](./BuenasPracticas.md)
 
 ## **Conclusión**
 
