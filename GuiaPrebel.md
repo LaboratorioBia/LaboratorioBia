@@ -98,9 +98,7 @@ Cada documento contiene detalles sobre:
 
 Para garantizar eficiencia y legibilidad en el código, se siguen estándares establecidos en un documento separado. Consulta las buenas prácticas y convenciones aquí:
 
-�[� ](https://kafka.apache.org/)[Guía de Estándares](https://kafka.apache.org/)[ de Código y Buenas Prácticas](./guia_estandares_codigo.md)
-
----
+[Buenas Practicas y Convenciones](./EstandarMicroservicios.md)
 
 ## **Conclusión**
 
