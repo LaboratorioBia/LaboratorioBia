@@ -58,10 +58,10 @@ Las herramientas de escritorio (pequeñas aplicaciones con interfaz gráfica en 
 
 ```
 📂 Herramientas de Escritorio
-│── 🗂 TOOL_Logistica
+│── 🗂 DESK_Logistica
 │   ├── ValidadorStock/
 │   ├── ReportePedidos/
-│── 🗂 TOOL_Finanzas
+│── 🗂 DESK_Finanzas
 │   ├── ConciliacionBancaria/
 │   ├── ConversorMonedas/
 ```
