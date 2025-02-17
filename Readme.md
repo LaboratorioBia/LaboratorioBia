@@ -8,7 +8,7 @@ Prebel desarrolla y mantiene una variedad de soluciones tecnológicas, incluyend
 - Aplicaciones Web (APP\_nombre)
 - **Frontends** (FRONT\_nombre)
 - **Automatizaciones RPA** (RPA\_nombre)
-- **Aplicaciones de Escritorio** (TOOL\_nombre)
+- **Aplicaciones de Escritorio** (DESK\_nombre)
 
 Cada uno de estos componentes sigue un estándar interno de desarrollo para garantizar escalabilidad, mantenibilidad y eficiencia. Esta guía proporciona una visión general del ecosistema de desarrollo y referencias a documentación detallada para cada tipo de proyecto.
 
@@ -83,7 +83,7 @@ Cada tipo de proyecto sigue una documentación específica con buenas prácticas
 - **Aplicaciones Web:** [Guía de Desarrollo de APPs](./EstandarApps.md)
 - **Frontends:** [Guía de Desarrollo de FRONT](./EstandarFronts.md)
 - **Automatizaciones RPA:** [Guía de Desarrollo de RPAs](./EstandarRpas.md)
-- **Aplicaciones de Escritorio:** [Guía de Desarrollo de TOOl](./EstandarEscritorio.md)
+- **Aplicaciones de Escritorio:** [Guía de Desarrollo de DESK](./EstandarDeskApps.md)
 
 Cada documento contiene detalles sobre:
 
