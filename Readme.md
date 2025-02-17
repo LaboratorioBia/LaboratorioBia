@@ -104,6 +104,6 @@ Para garantizar eficiencia y legibilidad en el código, se siguen estándares es
 
 Esta guía sirve como introducción al ecosistema de desarrollo en Prebel. Se recomienda a todos los desarrolladores seguir las normas establecidas y consultar la documentación específica según el tipo de proyecto que estén implementando. Para cualquier duda, contactar con el equipo de arquitectura.
 
-## **Arquitectura **
+## **Arquitectura**
 ![Arquitectura Prebel](https://github.com/user-attachments/assets/a8cad742-6629-4b58-bee9-9ae875a4e45b)
 
