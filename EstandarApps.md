@@ -1,3 +1,18 @@
+---
+
+# Aclaración General
+
+> **Importante:**  
+> Este estándar se propone como un ejemplo de estructura organizacional para proyectos, integrando buenas prácticas de desarrollo y una arquitectura sólida que permita implementar los principios **SOLID** de manera clara y entendible para cualquier desarrollador.  
+> 
+> Si bien se sugiere un ejemplo de estructura –que incluye arquitecturas como **Microservicios**, **Arquitectura Hexagonal** y **Clean Architecture**– cada proyecto es único y podrá tener variaciones o no requerir el uso completo de la estructura propuesta.  
+> 
+> Se recomienda encarecidamente adaptar la arquitectura según las necesidades específicas del proyecto. Por ejemplo, en este estándar se plantea un modelo donde el **Backend** se implementa con **Django** y el **Frontend** con **React**; sin embargo, es completamente viable reutilizar la lógica de una arquitectura de Frontend (basada en Clean Architecture) en el Backend de Django, aprovechando su sistema de *Templates* y la carpeta *static*.  
+> 
+> Además, se incluye un ejemplo de integración con **Docker** para facilitar despliegues y pruebas, aunque ciertas herramientas avanzadas como Docker estarán presentes en la estructura, pero por el momento **no se utilizarán activamente** en el flujo principal del desarrollo.
+
+---
+
 # 🏗️ Clean Architecture en React y Django - Guía Completa
 
 ## 📌 Introducción
@@ -160,5 +175,3 @@ $ docker-compose up
 ✅ **Despliegue eficiente** con Docker/Kubernetes.  
 
 Con esta estructura, el proyecto se mantiene **modular, flexible y listo para la producción**. 🚀
-
-
