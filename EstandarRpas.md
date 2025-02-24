@@ -1,22 +1,45 @@
-### **Introducción**
-Bienvenido al repositorio de **LaboratorioBia**. Este proyecto es una plantilla para construir, organizar y desplegar RPAs utilizando **Airflow** como herramienta de orquestación y **Docker** para asegurar portabilidad y escalabilidad.
 
-Este repositorio está diseñado tanto para nuevos desarrolladores como para nuestro equipo interno. Proporciona una base estandarizada para construir soluciones automatizadas eficientes y mantener un flujo de trabajo uniforme.
+# Estándar para RPAs - Guía Completa
 
 ---
 
-### **Arquitectura**
-La arquitectura sigue un diseño modular para garantizar la claridad, el mantenimiento y la escalabilidad. Los componentes principales son:
+## Aclaración General
 
-1. **Airflow**: Orquesta los flujos de trabajo (DAGs) para ejecutar y monitorear las tareas del RPA.
-2. **Tareas (Tasks)**: Funciones específicas que realizan acciones individuales.
-3. **Workflows**: Combinan tareas en flujos de trabajo organizados.
-4. **Adaptadores (Adapters)**: Interactúan con sistemas externos como SAP, APIs o bases de datos.
-5. **Docker**: Facilita la portabilidad y el despliegue en diferentes entornos.
+> **Importante:**  
+> Este estándar se propone como un ejemplo de estructura organizacional para proyectos de RPAs, integrando buenas prácticas de desarrollo y una arquitectura sólida que permita implementar los principios **SOLID** de manera clara y entendible para cualquier desarrollador.
+> 
+> Los **RPAs automatizados**, que se ejecutarán en un servidor o entorno similar, **deben cumplir con la estructura** aquí establecida, ya que estarán organizados por área y se reutilizarán componentes como *services*, *adapters* y otros módulos según sea necesario.
+> 
+> Por otro lado, para los **RPAs ejecutables por el usuario** (o pequeñas aplicaciones de escritorio), se podrá adaptar la estructura incorporando, por ejemplo, una carpeta adicional para la interfaz gráfica (GUI) que permita la interacción o parametrización del proceso. En estos casos se podrán emplear frameworks como Tkinter, Flask, Flet, entre otros, siempre cumpliendo con las buenas prácticas de desarrollo.
 
 ---
 
-### **Estructura del Proyecto**
+## Introducción
+
+Este documento ofrece una guía detallada para la implementación y organización de **RPAs** (Robotic Process Automation) en dos escenarios:
+- **RPAs Automatizados:** Diseñados para ejecutarse de forma automática en servidores, organizados por áreas funcionales y con reutilización de código en módulos comunes.
+- **RPAs Ejecutables (Aplicaciones de Escritorio):** Pequeñas aplicaciones empaquetadas (por ejemplo, como .exe) que permiten la interacción del usuario mediante interfaces gráficas.
+
+La idea es disponer de una estructura modular y escalable que garantice la mantenibilidad y el cumplimiento de los principios de diseño robusto.
+
+---
+
+## Principios de la Arquitectura
+
+La arquitectura propuesta tiene como objetivos:
+- **Separación de Responsabilidades:** Cada módulo (adapters, services, tasks, etc.) cumple una función específica.
+- **Reutilización de Código:** Facilitar la reutilización de componentes comunes en distintos módulos o áreas.
+- **Adaptabilidad:** Permitir ajustes en la estructura según el tipo de RPA (automatizado vs. ejecutable), sin perder de vista las buenas prácticas y principios **SOLID**.
+
+---
+
+## Estructura del Proyecto
+
+### 1. RPAs Automatizados (Servidor)
+
+Estos RPAs están diseñados para ejecutarse de forma automática en un entorno servidor. Se recomienda organizarlos por área funcional, donde cada área incorpora sus propios módulos de *adapters*, *services*, *tasks*, etc. La estructura sugerida es la siguiente:
+
+### **Estructura del proyecto por repositorio en GitHub**
 ```plaintext
 /RPA_template
 ├── /RPA
@@ -36,6 +59,9 @@ La arquitectura sigue un diseño modular para garantizar la claridad, el manteni
 │   ├── /adapters                # Adaptadores externos / External adapters
 │   │   ├── sap_adapter.py
 │   │   └── db_adapter.py
+│   ├── /services                # Servicios adicionales como envío de notificaciones
+│   │   ├── email.py
+│   │   └── telegram.py
 │   ├── /utils                   # Funciones reutilizables / Reusable utilities
 │   │   └── file_operations.py
 ├── /airflow                     # Configuración de Airflow / Airflow configuration
@@ -48,56 +74,45 @@ La arquitectura sigue un diseño modular para garantizar la claridad, el manteni
 └── README.md
 ```
 
----
+> **Nota:**  
+> Esta estructura es un punto de partida. Cada proyecto debe evaluar sus necesidades particulares y, si es necesario, adaptar o extender la organización de carpetas manteniendo siempre la claridad y modularidad.
 
 ---
 
-### **Instalación**
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/LaboratorioBia/CoreStandardTemplates.git
-   cd RPA_template
-   ```
+### 2. RPAs Ejecutables (Aplicaciones de Escritorio)
 
-2. Configura el entorno:
-   - Copiar folder RPA y llevarlo a un nuevo directorio
-   - Instalar dependencias del proyecto
-   ```
+En algunos casos, los RPAs se empaquetan como aplicaciones ejecutables (por ejemplo, .exe) para que el usuario final pueda interactuar o parametrizar el proceso. En estos escenarios se recomienda agregar una carpeta dedicada a la interfaz gráfica. La estructura sugerida es la siguiente:
 
----
-
-### **Ejemplo de DAG**
-Este es un ejemplo de cómo configurar un DAG para ejecutar un workflow:
-
-```python
-from airflow import DAG
-from airflow.operators.python import PythonOperator
-from datetime import datetime
-from RPA.workflows.workflow_1 import Workflow1
-
-with DAG(
-    dag_id='rpa_workflow_1',
-    schedule_interval='@daily',
-    start_date=datetime(2023, 1, 1),
-    catchup=False,
-) as dag:
-
-    task_1 = PythonOperator(
-        task_id='task_1',
-        python_callable=Workflow1().execute_task_1,
-    )
-
-    task_2 = PythonOperator(
-        task_id='task_2',
-        python_callable=Workflow1().execute_task_2,
-    )
-
-    task_1 >> task_2
+```
+📂 my_rpa_project/
+├── 📂 adapters/       # Lógica de integración y transformación de datos
+├── 📂 services/       # Servicios reutilizables (envío de correos, notificaciones, etc.)
+├── 📂 tasks/          # Scripts y tareas automatizadas
+├── 📂 config/         # Configuraciones generales
+├── 📂 logs/           # Registros de ejecución
+├── 📂 tests/          # Pruebas unitarias
+├── 📂 GUI/            # Componentes de la interfaz gráfica
+│   ├── components/    # Elementos de UI reutilizables (botones, formularios, etc.)
+│   ├── views/         # Ventanas o vistas principales
+│   └── controllers/   # Lógica de interacción entre la GUI y el RPA
+├── 📄 main.py         # Punto de entrada que integra la lógica del RPA con la interfaz
+├── 📄 README.md       # Documentación del proyecto
 ```
 
+> **Frameworks y Consideraciones:**  
+> Para la implementación de la interfaz gráfica se pueden utilizar frameworks como:
+> - **Tkinter:** Biblioteca estándar de Python para GUIs.
+> - **Flask/Flet:** Para interfaces web ligeras que se empaqueten como aplicaciones de escritorio.
+> - **Otros:** Evaluar según los requerimientos específicos del proyecto.
+> 
+> La clave es asegurar que, tanto la parte automatizada como la interactiva, se desarrollen bajo buenas prácticas, garantizando una arquitectura modular y escalable.
+
 ---
 
-### **Autores**
-Este proyecto fue desarrollado por el equipo de **LaboratorioBia**.
+## Conclusión
 
----
+Este estándar ofrece un marco de referencia flexible para el desarrollo de RPAs, diferenciando claramente entre:
+- **RPAs Automatizados:** Que se ejecutan en un entorno servidor, organizados por área funcional y con reutilización de módulos comunes.
+- **RPAs Ejecutables (Aplicaciones de Escritorio):** Que incorporan una interfaz gráfica para la interacción del usuario.
+
+Se recomienda evaluar cada caso de uso y ajustar la estructura de carpetas y módulos según la complejidad y los requerimientos específicos del proyecto, siempre manteniendo un enfoque en la mantenibilidad, la claridad y la aplicación de principios de diseño robustos.

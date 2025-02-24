@@ -1,5 +1,3 @@
----
-
 # Aclaración General
 
 > **Importante:**  
@@ -11,7 +9,6 @@
 > 
 > Además, se incluye un ejemplo de integración con **Docker** para facilitar despliegues y pruebas, aunque ciertas herramientas avanzadas como Docker estarán presentes en la estructura, pero por el momento **no se utilizarán activamente** en el flujo principal del desarrollo.
 
----
 
 # 🏗️ Clean Architecture en React y Django - Guía Completa
 
