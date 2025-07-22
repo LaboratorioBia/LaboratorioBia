@@ -69,7 +69,7 @@ Las herramientas de escritorio (pequeñas aplicaciones con interfaz gráfica en 
 📌 **Reglas:**
 
 - **Microservicios** → Un repositorio por microservicio y su frontend.
-- **Aplicaciones Monolíticas** → Backend y frontend en el mismo repositorio.
+- **Aplicaciones** → Backend y frontend en el mismo repositorio.
 - **Automatizaciones RPA** → Repositorios por área.
 - **Aplicaciones de Escritorio** → Un solo repositorio con subcarpetas por área.
 
