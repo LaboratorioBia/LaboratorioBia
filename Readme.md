@@ -4,11 +4,11 @@
 
 Prebel desarrolla y mantiene una variedad de soluciones tecnológicas, incluyendo:
 
-- **Microservicios** (SERVICE\_nombre)
-- Aplicaciones Web (APP\_nombre)
-- **Frontends** (FRONT\_nombre)
-- **Automatizaciones RPA** (RPA\_nombre)
-- **Aplicaciones de Escritorio** (DESK\_nombre)
+- **Microservicios** (SERVICE_nombre)
+- Aplicaciones Web (APP_nombre)
+- **Frontends** (FRONT_nombre)
+- **Automatizaciones RPA** (RPA_nombre)
+- **Aplicaciones de Escritorio** (DESK_nombre)
 
 Cada uno de estos componentes sigue un estándar interno de desarrollo para garantizar escalabilidad, mantenibilidad y eficiencia. Esta guía proporciona una visión general del ecosistema de desarrollo y referencias a documentación detallada para cada tipo de proyecto.
 
@@ -105,5 +105,5 @@ Para garantizar eficiencia y legibilidad en el código, se siguen estándares es
 Esta guía sirve como introducción al ecosistema de desarrollo en Prebel. Se recomienda a todos los desarrolladores seguir las normas establecidas y consultar la documentación específica según el tipo de proyecto que estén implementando. Para cualquier duda, contactar con el equipo de arquitectura.
 
 ## **Arquitectura**
-![Arquitectura Prebel](https://github.com/user-attachments/assets/a8cad742-6629-4b58-bee9-9ae875a4e45b)
 
+![Arquitectura Prebel](/image.png)

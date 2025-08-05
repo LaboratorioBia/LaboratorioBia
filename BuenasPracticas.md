@@ -1,176 +1,42 @@
-## Guía de Estilo y Buenas Prácticas**
+# 📘 Guía de Estilo y Buenas Prácticas
 
-### **Introducción**
-Esta guía establece las normas para el desarrollo de proyectos dentro de nuestro equipo. Nuestro objetivo es mantener un código limpio, consistente y fácil de mantener. Estas prácticas se aplican a nomenclaturas, definiciones de variables, clases, directorios y documentación.
-
----
-
-### **1. Estandarización de Nomenclaturas**
-
-#### **1.1 Nombres de Variables y Funciones**
-- **Formato**: Usar `snake_case` para variables y funciones.
-- **Prefijos específicos**:
-  - Para funciones de CRUD:
-    - `create_`: Crear un recurso.
-    - `read_`: Leer un recurso.
-    - `update_`: Actualizar un recurso.
-    - `delete_`: Eliminar un recurso.
-  - Para funciones auxiliares:
-    - `get_`: Obtener datos o configuraciones.
-    - `set_`: Establecer valores.
-    - `process_`: Procesar datos.
-    - `calculate_`: Realizar cálculos.
-    - `validate_`: Validar datos.
-- **Ejemplo**:
-  ```python
-  def calculate_total_price(items):
-      # Calcula el precio total de los items
-      pass
-  ```
-
-#### **1.2 Nombres de Clases**
-- **Formato**: Usar `PascalCase` para clases.
-- **Sufijos específicos**:
-  - `Controller`: Clases que gestionan la lógica del flujo (MVC o REST APIs).
-  - `Service`: Clases que contienen la lógica de negocio.
-  - `Adapter`: Clases que interactúan con sistemas externos.
-  - `Repository`: Clases que encapsulan el acceso a datos.
-- **Ejemplo**:
-  ```python
-  class SalesReportService:
-      # Maneja la lógica de generación de reportes de ventas
-      pass
-  ```
-
-#### **1.3 Directorios**
-- **Formato**: Usar nombres en **minúscula** separados por guiones bajos (`snake_case`) para directorios.
-- **Directorio raíz**: Cada directorio debe representar una capa de la aplicación o un módulo específico.
-- **Ejemplo**:
-  ```plaintext
-  /rpa/
-  ├── /tasks/
-  ├── /workflows/
-  ├── /adapters/
-  ├── /config/
-  └── /utils/
-  ```
+Esta guía centraliza las **normas y estándares** que rigen el desarrollo de proyectos en nuestro equipo.  
+El objetivo es mantener un **código limpio, consistente y sostenible**, asegurando una base sólida para el trabajo colaborativo.
 
 ---
 
-### **2. Estándar de Documentación**
+## **1. Introducción**
 
-#### **2.1 Docstrings Detallados**
-- **Formato**: Usar **Google Style** para la documentación interna.
-- **Idioma**: Español, para facilitar la comprensión del equipo.
-
-#### **Ejemplo de Docstring para una Función**
-```python
-def calculate_total_price(items):
-    """
-    Calcula el precio total de los items.
-
-    Args:
-        items (list): Lista de diccionarios con información del item. 
-                      Cada diccionario debe incluir las claves `price` (float) y `quantity` (int).
-
-    Returns:
-        float: Precio total calculado.
-    """
-    return sum(item['price'] * item['quantity'] for item in items)
-```
-
-#### **Ejemplo de Docstring para una Clase**
-```python
-class SalesReportService:
-    """
-    Servicio para la generación de reportes de ventas.
-
-    Métodos:
-        generate_report(data): Genera un reporte en formato Excel.
-        send_report(email): Envía el reporte por correo electrónico.
-    """
-    def generate_report(self, data):
-        """
-        Genera un reporte en formato Excel a partir de los datos proporcionados.
-
-        Args:
-            data (list): Lista de diccionarios con las ventas.
-
-        Returns:
-            str: Ruta al archivo generado.
-        """
-        pass
-```
+Este documento funciona como **punto de partida** para nuevos y actuales desarrolladores, ofreciendo un mapa hacia las guías específicas que detallan los estándares de nomenclatura, documentación y buenas prácticas técnicas.
 
 ---
 
-### **3. Uso de Swagger para APIs**
-- Usaremos **Swagger** (o OpenAPI) para documentar APIs REST. 
-- Todas las rutas deben incluir:
-  - Descripción clara del endpoint.
-  - Ejemplo de entrada y salida.
-  - Posibles códigos de error.
-- **Ejemplo de Documentación en Swagger**:
-```yaml
-paths:
-  /sales:
-    get:
-      summary: Obtiene la lista de ventas.
-      description: Retorna una lista de ventas con detalles como precio, cantidad, y fecha.
-      responses:
-        200:
-          description: Lista de ventas obtenida con éxito.
-        400:
-          description: Error en la solicitud.
-```
+## **2. Guía de Implementación para Nuevos Desarrolladores**
+
+1. Familiarízate con la **estructura del proyecto** y las convenciones de nomenclatura.
+2. Consulta los **docstrings** y documentación disponible para comprender los módulos existentes.
+3. Usa **ejemplos y plantillas corporativas** como referencia para nuevas implementaciones.
+4. Sigue los **estándares de estilo** al escribir código (nombres en inglés, documentación en español).
 
 ---
 
-### **4. Estándar de Definición de Proyectos**
-- **Idiomas**:
-  - Todo el algoritmo debe estar en inglés (variables, funciones, clases).
-  - La documentación (docstrings, comentarios) estará en español.
-- **Organización del Proyecto**:
-  - Cada módulo debe separarse por función (tareas, adaptadores, workflows).
-  - Los nombres de los archivos deben reflejar claramente su contenido.
-- **Ejemplo**:
-  ```plaintext
-  /rpa/
-  ├── main.py                  # Punto de entrada principal.
-  ├── /tasks/                  # Tareas específicas del RPA.
-  │   ├── __init__.py
-  │   ├── calculate_price.py
-  ├── /adapters/               # Adaptadores externos.
-  │   ├── api_adapter.py
-  │   └── database_adapter.py
-  └── /config/                 # Configuración compartida.
-      ├── settings.py
-      └── logger.py
-  ```
+## **3. Guías Específicas**
+
+A continuación, se presentan las guías que complementan este documento. Cada una aborda un área específica de nuestro ecosistema de desarrollo:
+
+| **Tema**                            | **Archivo / Enlace**                                                                              | **Descripción**                                                                  |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **Nomenclatura de Repositorios**    | [nomenclatura-repositorios.md](./Buenas%20practicas%20y%20estándares/NomenclaturaRepositorios.md) | Convenciones para nombrar aplicaciones, servicios, frontends y RPAs.             |
+| **Frontend: Componentes y Rutas**   | [nomenclatura-frontend.md](./Buenas%20practicas%20y%20estándares/NomenclaturaFront.md)            | Estándares para nombres de componentes, funciones, archivos y enrutado.          |
+| **Backend: Python**                 | [nomenclatura-backend-python.md](./Buenas%20practicas%20y%20estándares/NomenclaturaPython.md)     | Convenciones para clases, funciones, módulos y estructuras de proyecto.          |
+| **Enrutado con kebab-case**         | [enrutado-kebab-case.md](./Buenas%20practicas%20y%20estándares/NomenclaturaEnrutado.md)           | Estandarización de rutas en Django, Vite y Next.js (incluyendo rutas dinámicas). |
+| **Documentación de Código**         | [documentacion-codigo.md](./Buenas%20practicas%20y%20estándares/DocumentacionEnElCodigo.md)       | Cuándo y cómo documentar funciones, clases y componentes.                        |
+| **Documentación en Swagger (APIs)** | [documentacion-swagger.md](./Buenas%20practicas%20y%20estándares/DocumentacionAPI.md)             | Estándar para documentar endpoints en Django REST Framework.                     |
+| **Principios SOLID**                | [principios-solid.md](./Buenas%20practicas%20y%20estándares/PrincipiosSOLID.md)                   | Buenas prácticas para diseño de software mantenible y escalable.                 |
 
 ---
 
-### **5. Recomendaciones Generales**
-1. **Nombrado Consistente**:
-   - Todos los nombres deben ser intuitivos y descriptivos.
-2. **Principios SOLID**:
-   - Aplica separación de responsabilidades: cada clase o función debe tener un propósito claro.
-3. **Pruebas**:
-   - Escribe pruebas unitarias y de integración para cada módulo.
-4. **Revisiones de Código**:
-   - Usa herramientas como GitHub Actions para validar estándares automáticamente.
+## **4. Conclusión**
 
----
-
-### **6. Guía de Implementación para Nuevos Desarrolladores**
-- **Paso 1**: Familiarízate con la estructura del proyecto y las convenciones de nomenclatura.
-- **Paso 2**: Consulta los docstrings para entender la funcionalidad de cada módulo.
-- **Paso 3**: Usa ejemplos y plantillas existentes como base para nuevas implementaciones.
-- **Paso 4**: Sigue los estándares al escribir código, incluyendo nombres en inglés y docstrings en español.
-
----
-
-### **Conclusión**
-Esta guía proporciona una base sólida para desarrollar proyectos de forma estandarizada y colaborativa. Cualquier duda o sugerencia debe discutirse en las revisiones de código o reuniones del equipo.
-
----
+Esta guía es la **base de nuestra cultura de desarrollo**.  
+Cualquier duda, mejora o propuesta de actualización debe discutirse en las **revisiones de código** o durante las **reuniones técnicas del equipo**.
