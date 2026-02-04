@@ -1,0 +1,302 @@
+# 📘 Manual de Documentación de Producto y Desarrollo
+
+**Organización:** Prebel S.A. BIC
+**Propósito:** Establecer un estándar único, claro y reutilizable para la documentación de productos, proyectos y desarrollos de software en Prebel.
+
+---
+
+##  1. Objetivo del manual
+
+Este manual define las **reglas, estructuras y buenas prácticas** para documentar correctamente:
+
+* Historias de usuario
+* Requerimientos funcionales y no funcionales
+* Aspectos técnicos
+* Trazabilidad entre negocio, desarrollo y operación
+
+Busca garantizar:
+
+* Claridad
+* Consistencia
+* Trazabilidad
+* Escalabilidad
+* Transferencia de conocimiento
+
+---
+
+##  2. Principios de documentación en Prebel
+
+Toda documentación debe cumplir:
+
+1. **Centrada en valor**: debe explicar el *por qué*, no solo el *qué*.
+2. **Lenguaje claro**: entendible por negocio y tecnología.
+3. **Un solo estándar**: evita estilos personales.
+4. **Trazable**: todo debe tener un ID único.
+5. **Viva**: se actualiza con el producto.
+
+---
+
+##  3. Tipos de requerimientos
+
+### 3.1 Funcionales
+
+Describen capacidades visibles para el usuario.
+
+**Ejemplos:**
+
+* Crear registros
+* Consultar información
+* Exportar datos
+
+**Formato obligatorio:**
+
+```
+Como [rol]
+Quiero [funcionalidad]
+Para [beneficio]
+```
+
+---
+
+### 3.2 No Funcionales (NFR)
+
+Describen atributos de calidad del sistema.
+
+**Categorías comunes:**
+
+* Performance
+* Seguridad
+* Escalabilidad
+* Disponibilidad
+* Mantenibilidad
+
+**Forma recomendada:**
+
+* Enfocadas en métricas
+* Claramente medibles
+
+---
+
+### 3.3 Técnicos
+
+Describen trabajo interno del equipo técnico.
+
+**Ejemplos:**
+
+* Refactorización
+* Migraciones
+* Configuración de infraestructura
+
+---
+
+##  4. Estándar de Identificación y Nomenclaturas (IDs)
+
+La nomenclatura de IDs es **obligatoria en Prebel** y garantiza trazabilidad, orden y gobierno entre negocio, desarrollo y operación.
+
+---
+
+### 4.1 Estructura general del ID
+
+```
+[PROYECTO]-[TIPO]-[CONSECUTIVO]
+```
+
+Cada parte del ID cumple un propósito específico y **no es opcional**.
+
+---
+
+### 4.2 Prefijo de PROYECTO
+
+Identifica el producto, sistema, iniciativa o frente de trabajo.
+
+**Reglas:**
+
+* Mayúsculas
+* Entre 2 y 6 caracteres
+* Sin espacios ni caracteres especiales
+* Debe representar claramente el dominio del proyecto
+
+#### Ejemplos de tipos de proyectos en Prebel
+
+| Tipo de proyecto      | Descripción                           | Prefijo sugerido |
+| --------------------- | ------------------------------------- | ---------------- |
+| Aplicaciones internas | Sistemas usados por áreas internas    | BIA, CRM, PORTAL |
+| Productos digitales   | Aplicaciones con ciclo de vida propio | LOTE, PRICING    |
+| Automatizaciones      | RPA, scripts, flujos                  | RPA, AUTO        |
+| Integraciones         | SAP, APIs, middlewares                | INT, SAP         |
+| Analítica / BI        | Reportes, dashboards, modelos         | BI, DATA         |
+| Infraestructura       | Cloud, DevOps, seguridad              | INFRA, DEVOPS    |
+
+**Ejemplos:**
+
+```
+BIA-US-001
+SAP-TECH-014
+RPA-BUG-003
+```
+
+---
+
+### 4.3 Tipo de requerimiento
+
+Define la naturaleza del trabajo.
+
+| Tipo         | Código | Uso                                   |
+| ------------ | ------ | ------------------------------------- |
+| Funcional    | US     | Funcionalidad visible para el usuario |
+| No funcional | NFR    | Calidad del sistema                   |
+| Técnico      | TECH   | Deuda técnica / arquitectura          |
+| Bug          | BUG    | Error o falla                         |
+| Spike        | SPIKE  | Investigación / prueba                |
+| Tarea        | TASK   | Actividad puntual                     |
+
+---
+
+### 4.4 Consecutivo
+
+**Reglas:**
+
+* Numérico
+* Autoincremental
+* Único por proyecto
+* No se reutiliza
+
+Ejemplos:
+
+```
+BIA-US-021
+BIA-NFR-009
+BIA-TECH-015
+```
+
+----|----|----| | Funcional | US | Historia de usuario | | No funcional | NFR | Requerimientos de calidad | | Técnico | TECH | Deuda técnica | | Bug | BUG | Errores | | Spike | SPIKE | Investigación |
+
+### 4.3 Ejemplos
+
+```
+BIA-US-021
+BIA-NFR-005
+BIA-TECH-014
+```
+
+**Reglas:**
+
+* El ID nunca cambia
+* No se reutiliza
+* Es único por proyecto
+
+---
+
+##  5. Criterios de aceptación
+
+Todos los requerimientos deben tener criterios de aceptación.
+
+### Formato estándar (BDD)
+
+```
+Dado que [contexto]
+Cuando [acción]
+Entonces [resultado esperado]
+```
+
+**Reglas:**
+
+* Mínimo 2
+* Máximo 5
+* Deben ser verificables
+
+---
+
+##  6. Regla INVEST
+
+Cada historia debe cumplir:
+
+* **I** – Independiente
+* **N** – Negociable
+* **V** – Valiosa
+* **E** – Estimable
+* **S** – Pequeña
+* **T** – Testeable
+
+Si no cumple INVEST, no entra a sprint.
+
+---
+
+##  7. Definition of Ready (DoR)
+
+Antes de iniciar desarrollo:
+
+* Historia clara
+* Valor definido
+* Criterios de aceptación
+* Estimada
+* Sin dependencias bloqueantes
+
+---
+
+##  8. Trazabilidad obligatoria
+
+Todo ID debe usarse en:
+
+* Commits
+* Pull Requests
+* Documentación
+* Casos de prueba
+* Releases
+
+### Ejemplo de commit
+
+```
+feat(BIA-US-021): exportación de resultados a Excel
+```
+
+---
+
+##  9. Estructura recomendada de documentación
+
+```
+/docs
+ ├── vision.md
+ ├── arquitectura.md
+ ├── requerimientos/
+ │    ├── funcionales.md
+ │    ├── no-funcionales.md
+ ├── decisiones.md
+ └── glosario.md
+```
+
+---
+
+##  10. Antipatrones a evitar
+
+* Mezclar funcional y no funcional en una historia
+* Usar nombres sin ID
+* Documentar soluciones técnicas en historias funcionales
+* Documentación sin dueño
+
+---
+
+##  11. Responsabilidades
+
+| Rol            | Responsabilidad        |
+| -------------- | ---------------------- |
+| Product Owner  | Valor y alcance        |
+| Equipo técnico | Viabilidad y criterios |
+| Líder técnico  | Consistencia técnica   |
+| Organización   | Gobierno del estándar  |
+
+---
+
+##  12. Evolución del estándar
+
+Este manual es **vivo** y puede evolucionar según:
+
+* Madurez del equipo
+* Nuevas herramientas
+* Escalamiento organizacional
+
+Las modificaciones deben ser aprobadas por el área de tecnología.
+
+---
+
+📌 **Este documento es el estándar oficial de documentación de Prebel.**
