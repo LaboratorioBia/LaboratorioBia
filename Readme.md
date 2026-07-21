@@ -80,7 +80,7 @@ Cada tipo de proyecto sigue una documentación específica con buenas prácticas
 
 - **Microservicios:** [Guía de Desarrollo de Microservicios](./EstandarMicroservicios.md)
 - **Aplicaciones Web:** [Guía de Desarrollo de APPs](./EstandarApps.md)
-- **Frontends:** [Guía de Desarrollo de FRONT](./EstandarFronts.md) y [Guía de Desarrollo de FRONT](./Buenas%20practicas%20y%20estándares/PatronesDiseñoFrontEnd.md)
+- **Frontends:** [Guía de Desarrollo de FRONT](./EstandarFronts.md) y [Patrones de Diseño de FRONT](./Buenas%20practicas%20y%20estándares/PatronesDiseñoFrontEnd.md)
 - **Automatizaciones RPA:** [Guía de Desarrollo de RPAs](./EstandarRpas.md)
 
 Cada documento contiene detalles sobre:
